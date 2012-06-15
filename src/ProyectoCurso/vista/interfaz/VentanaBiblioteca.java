@@ -1,5 +1,5 @@
 
-package proyectofinal.vista.interfaz;
+package ProyectoCurso.vista.interfaz;
 
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;

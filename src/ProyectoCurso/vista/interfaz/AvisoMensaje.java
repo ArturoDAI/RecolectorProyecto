@@ -1,4 +1,4 @@
-package proyectofinal.vista.interfaz;
+package ProyectoCurso.vista.interfaz;
 
 import java.awt.Component;
 import javax.swing.JOptionPane;

@@ -1,4 +1,4 @@
-package proyectofinal.vista.interfaz;
+package ProyectoCurso.vista.interfaz;
 
 public class VentanaListaProyectos extends javax.swing.JFrame {
 
