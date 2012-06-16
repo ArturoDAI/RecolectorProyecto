@@ -374,7 +374,7 @@ public class VentanaPreferencias extends javax.swing.JFrame {
     
     public void caca()
     {
-        
+        //drgfhkjkhjg
     }
     /**
      * Método que devuelve la contraseña puesta en el formulario
