@@ -219,7 +219,7 @@ public class Extracciones
     
     public static void main(String[] args)
     {
-        String ruta = "C:\\Documents and Settings\\Arturo\\Escritorio\\BD.sqlite";
+        String ruta = "C:\\Users\\Legado Secreto\\Desktop\\proyectoExtracciones.bd";
         Extracciones ext = new Extracciones(ruta);
         
                 
@@ -232,37 +232,37 @@ public class Extracciones
 //        ext.crearTablaEnlacesVideo();
 //        ext.crearTablaPyoyecto();
 //        
-//        ArrayList datosImg = new ArrayList();
-//        datosImg.add("www.facebook.com/images/arturo.jpg");
-//        datosImg.add("www.facebook.com/images/caca.jpg");
+        ArrayList datosImg = new ArrayList();
+        datosImg.add("www.pelis21.com/images/arturo.jpg");
+        datosImg.add("www.pelis21.com/images/caca.jpg");
+        
+        ArrayList datosSon = new ArrayList();
+        datosSon.add("www.pelis21.com/audio/arturo.mp3");
+        datosSon.add("www.pelis21.com/audio/caca.wma");
+        
+        ArrayList datosVid = new ArrayList();
+        datosVid.add("www.pelis21.com/video/arturo.mp4");
+        datosVid.add("www.pelis21.com/video/caca.mkv");
+        
+        ArrayList datosDoc = new ArrayList();
+        datosDoc.add("www.pelis21.com/documentos/arturo.org");
+        datosDoc.add("www.pelis21.com/documentos/caca.pdf");
+        
+        ArrayList datosOtr = new ArrayList();
+        datosOtr.add("www.pelis21.com/otros/arturo.iso");
+        datosOtr.add("www.pelis21.com/otros/caca.rar");
 //        
-//        ArrayList datosSon = new ArrayList();
-//        datosSon.add("www.facebook.com/audio/arturo.mp3");
-//        datosSon.add("www.facebook.com/audio/caca.wma");
+        ArrayList datosRec = new ArrayList();
+        datosRec.add("www.pelis21.com/images");
+        datosRec.add("www.pelis21.com/audio");
+        datosRec.add("www.pelis21.com/video");
+        datosRec.add("www.pelis21.com/documentos");
+        datosRec.add("www.pelis21.com/otros");
 //        
-//        ArrayList datosVid = new ArrayList();
-//        datosVid.add("www.facebook.com/video/arturo.mp4");
-//        datosVid.add("www.facebook.com/video/caca.mkv");
+        ArrayList datosSinRec = new ArrayList();
+        datosSinRec.add("www.pelis21.com/sinRecorrer");
 //        
-//        ArrayList datosDoc = new ArrayList();
-//        datosDoc.add("www.facebook.com/documentos/arturo.org");
-//        datosDoc.add("www.facebook.com/documentos/caca.pdf");
-//        
-//        ArrayList datosOtr = new ArrayList();
-//        datosOtr.add("www.facebook.com/otros/arturo.iso");
-//        datosOtr.add("www.facebook.com/otros/caca.rar");
-//        
-//        ArrayList datosRec = new ArrayList();
-//        datosRec.add("www.facebook.com/images");
-//        datosRec.add("www.facebook.com/audio");
-//        datosRec.add("www.facebook.com/video");
-//        datosRec.add("www.facebook.com/documentos");
-//        datosRec.add("www.facebook.com/otros");
-//        
-//        ArrayList datosSinRec = new ArrayList();
-//        datosSinRec.add("www.facebook.com/sinRecorrer");
-//        
-//        ext.guardarExtraccion(ruta, "proyectoPrueba2", datosImg, datosSon, datosVid, datosDoc, datosOtr, datosRec, datosSinRec);
+        ext.guardarExtraccion(ruta, "proyectoPrueba3", datosImg, datosSon, datosVid, datosDoc, datosOtr, datosRec, datosSinRec);
                 
         ext.eliminarExtraccion(0);
     }

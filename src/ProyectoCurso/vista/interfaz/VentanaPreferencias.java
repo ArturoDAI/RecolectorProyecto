@@ -370,6 +370,12 @@ public class VentanaPreferencias extends javax.swing.JFrame {
     {
         return this.jComboBox3.getSelectedIndex();
     }
+    
+    
+    public void caca()
+    {
+        
+    }
     /**
      * Método que devuelve la contraseña puesta en el formulario
      * @return Devuelve la contraseña

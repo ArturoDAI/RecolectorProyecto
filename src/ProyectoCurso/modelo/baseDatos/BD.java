@@ -238,6 +238,7 @@ public class BD
             {
                 do 
                 {
+                    // en esta variable al final te guardará la ultima id
                    resultado=(int)cursor.getRowId();
                 } 
                 while(cursor.next());
