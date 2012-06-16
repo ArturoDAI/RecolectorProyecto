@@ -282,6 +282,35 @@ public class BD
     }
     
     /**
+     * Método que elimina un registro de una tabla según el índice insertado
+     * @param nombreTabla Variable que contiene el nombre de la tabla donde se borrarán los registros
+     * @param indice Nombre del indice que usaremos.
+     * @param id Variable pasada por el usuario que indica el id a borrar
+     */
+    public void borrarRegistrosIndice(String nombreTabla,String indice, int id)
+    {
+        try {
+            this.bd.open();
+            this.table = this.bd.getTable(nombreTabla);
+            this.bd.beginTransaction(SqlJetTransactionMode.WRITE); 
+            // Esta función busca por calve primaria aquel id que concuerde con el pasado por el usuario
+            this.cursor = table.lookup(indice,id);
+            // Mientras no sea fin del cursor
+            while (!this.cursor.eof()) 
+            {       
+                // Elimina la clave buscada y sus datos asociados
+                this.cursor.delete();
+            }
+            this.cursor.close();
+            this.bd.commit();
+            this.bd.close();
+        } catch (SqlJetException ex) 
+        {
+            Logger.getLogger(BD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    /**
      * Método que modifica los registros de una tabla
      * @param nombreTabla Variable que guarda el nombre de la tabla donde se realizarán los cambios
      * @param id Variable, pasada por el usuario, que indica qué registro será actualizado

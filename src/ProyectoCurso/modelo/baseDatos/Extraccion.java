@@ -23,6 +23,13 @@ public class Extraccion
         this.id_proyecto = id;
         this.ruta = ruta;
         this.extraccion = new BD(this.ruta);
+        this.enlaces_imagenes = new ArrayList();
+        this.enlaces_audios = new ArrayList();
+        this.enlaces_videos = new ArrayList();
+        this.enlaces_documentos = new ArrayList();
+        this.enlaces_otros = new ArrayList();
+        this.enlaces_recorridos = new ArrayList();
+        this.enlaces_sin_recorrer = new ArrayList();
         this.abrirExtraccion(id);
     }
     
@@ -112,11 +119,11 @@ public class Extraccion
     
     public void abrirExtraccion(int id)
     {
-        ArrayList nom = new ArrayList();
+        ArrayList nom;
         
         String[] enlace;
         String[] campos = new String[]{"id_enl_audio","id_proyecto","nombre_enlace"};
-        nom = extraccion.busquedaBD("enlaces_audio", "indice_enlaces_audio_id_proyecto", campos, id);        
+        nom = extraccion.busquedaBD("enlaces_audio", "indice_enlaces_audioid_proyecto", campos, id);        
         for(int i=0;i<nom.size();i++)
         {
             enlace = (String[])nom.get(i);
@@ -124,7 +131,7 @@ public class Extraccion
         }
         
         campos = new String[]{"id_enl_imagen","id_proyecto","nombre_enlace"};
-        nom = extraccion.busquedaBD("enlaces_imagen", "indice_enlaces_imagen_id_proyecto", campos, id);
+        nom = extraccion.busquedaBD("enlaces_imagen", "indice_enlaces_imagenid_proyecto", campos, id);
         for(int i=0;i<nom.size();i++)
         {
             enlace = (String[])nom.get(i);
@@ -132,7 +139,7 @@ public class Extraccion
         }
         
         campos = new String[]{"id_enl_video","id_proyecto","nombre_enlace"};
-        nom = extraccion.busquedaBD("enlaces_video", "indice_enlaces_video_id_proyecto", campos, id);
+        nom = extraccion.busquedaBD("enlaces_video", "indice_enlaces_videoid_proyecto", campos, id);
         for(int i=0;i<nom.size();i++)
         {
             enlace = (String[])nom.get(i);
@@ -140,7 +147,7 @@ public class Extraccion
         }
         
         campos = new String[]{"id_enl_documento","id_proyecto","nombre_enlace"};
-        nom = extraccion.busquedaBD("enlaces_documento", "indice_enlaces_documento_id_proyecto", campos, id);
+        nom = extraccion.busquedaBD("enlaces_documento", "indice_enlaces_documentoid_proyecto", campos, id);
         for(int i=0;i<nom.size();i++)
         {
             enlace = (String[])nom.get(i);
@@ -148,7 +155,7 @@ public class Extraccion
         }
         
         campos = new String[]{"id_enl_otro","id_proyecto","nombre_enlace"};
-        nom = extraccion.busquedaBD("enlaces_otro", "indice_enlaces_otro_id_proyecto", campos, id);
+        nom = extraccion.busquedaBD("enlaces_otro", "indice_enlaces_otroid_proyecto", campos, id);
         for(int i=0;i<nom.size();i++)
         {
             enlace = (String[])nom.get(i);
@@ -156,7 +163,7 @@ public class Extraccion
         }
         
         campos = new String[]{"id_enl_recorrido","id_proyecto","nombre_enlace"};
-        nom = extraccion.busquedaBD("enlaces_recorrido", "indice_enlaces_recorrido_id_proyecto", campos, id);
+        nom = extraccion.busquedaBD("enlaces_recorrido", "indice_enlaces_recorridoid_proyecto", campos, id);
         for(int i=0;i<nom.size();i++)
         {
             enlace = (String[])nom.get(i);
@@ -164,7 +171,7 @@ public class Extraccion
         }
         
         campos = new String[]{"id_enl_sin_recorrer","id_proyecto","nombre_enlace"};
-        nom = extraccion.busquedaBD("enlaces_sin_recorrer", "indice_enlaces_sin_recorrer_id_proyecto", campos, id);
+        nom = extraccion.busquedaBD("enlaces_sin_recorrer", "indice_enlaces_sin_recorrerid_proyecto", campos, id);
         for(int i=0;i<nom.size();i++)
         {
             enlace = (String[])nom.get(i);
@@ -175,13 +182,13 @@ public class Extraccion
     public void eliminarProyectoExtraccion()
     {
         extraccion.borrarRegistros("proyecto", this.id_proyecto);
-        extraccion.borrarRegistros("enlaces_imagen", this.id_proyecto);
-        extraccion.borrarRegistros("enlaces_audio", this.id_proyecto);
-        extraccion.borrarRegistros("enlaces_video", this.id_proyecto);
-        extraccion.borrarRegistros("enlaces_documento", this.id_proyecto);   
-        extraccion.borrarRegistros("enlaces_otro", this.id_proyecto);
-        extraccion.borrarRegistros("enlaces_recorrido", this.id_proyecto);
-        extraccion.borrarRegistros("enlaces_sin_recorrer", this.id_proyecto);
+        extraccion.borrarRegistrosIndice("enlaces_imagen", "indice_enlaces_imagenid_proyecto", this.id_proyecto);
+        extraccion.borrarRegistrosIndice("enlaces_audio", "indice_enlaces_audioid_proyecto", this.id_proyecto);
+        extraccion.borrarRegistrosIndice("enlaces_video", "indice_enlaces_videoid_proyecto", this.id_proyecto);
+        extraccion.borrarRegistrosIndice("enlaces_documento", "indice_enlaces_documentoid_proyecto", this.id_proyecto);   
+        extraccion.borrarRegistrosIndice("enlaces_otro", "indice_enlaces_otroid_proyecto", this.id_proyecto);
+        extraccion.borrarRegistrosIndice("enlaces_recorrido", "indice_enlaces_recorridoid_proyecto", this.id_proyecto);
+        extraccion.borrarRegistrosIndice("enlaces_sin_recorrer", "indice_enlaces_sin_recorrerid_proyecto",this.id_proyecto);
     }
 
     public int getIdProyecto()
